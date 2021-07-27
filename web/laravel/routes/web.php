@@ -19,4 +19,8 @@ Route::get('/', function () {
 
 Route::get('/top', function () {
     return view('top');
-});
+})->name('top');
+
+Route::get('/ekiden_master', function () {
+    return view('ekiden_master');
+})->name('ekidenMaster');
