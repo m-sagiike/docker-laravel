@@ -18,18 +18,18 @@
   <tbody>
     <tr>
       <th scope="row">出雲全日本大学選抜駅伝競走（出雲駅伝）</th>
+      <td><a class="btn btn-primary" href="{{ route('ekidenRecord') }}" role="button">大会記録</a></td>
       {{-- 大会記録マスタ画面へ遷移させる --}}
-      <td><button type="button" class="btn btn-primary">大会記録</button></td>
-      <td><button type="button" class="btn btn-success">編集</button></td>
+      <td><button type="button" class="btn btn-success">詳細</button></td>
     </tr>
     <tr>
       <th scope="row">全日本大学駅伝対校選手権大会</th>
-      <td><button type="button" class="btn btn-primary">大会記録</button></td>
+      <td><a class="btn btn-primary" href="{{ route('ekidenRecord') }}" role="button">大会記録</a></td>
       <td><button type="button" class="btn btn-success">編集</button></td>
     </tr>
     <tr>
       <th scope="row">東京箱根間往復大学駅伝競走</th>
-      <td><button type="button" class="btn btn-primary">大会記録</button></td>
+      <td><a class="btn btn-primary" href="{{ route('ekidenRecord') }}" role="button">大会記録</a></td>
       <td><button type="button" class="btn btn-success">編集</button></td>
     </tr>
   </tbody>

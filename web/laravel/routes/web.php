@@ -24,3 +24,7 @@ Route::get('/top', function () {
 Route::get('/ekiden_master', function () {
     return view('ekiden_master');
 })->name('ekidenMaster');
+
+Route::get('/ekiden_record', function () {
+    return view('ekiden_record');
+})->name('ekidenRecord');
