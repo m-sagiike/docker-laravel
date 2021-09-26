@@ -28,3 +28,7 @@ Route::get('/ekiden_master', function () {
 Route::get('/ekiden_record', function () {
     return view('ekiden_record');
 })->name('ekidenRecord');
+
+Route::get('/kukan_record', function () {
+    return view('kukan_record');
+})->name('kukanRecord');

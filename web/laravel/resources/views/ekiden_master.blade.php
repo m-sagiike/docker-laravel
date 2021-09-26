@@ -4,8 +4,10 @@
  
 @section('content')
 <p>駅伝マスタ</p>
-<div class="mb-3">
-  <button type="button" class="btn btn-primary">駅伝新規登録</button>
+<div class="row mb-3 mr-0 ml-0">
+  <div class="col-10">
+    <button type="button" class="btn btn-primary">駅伝新規登録</button>
+  </div>
 </div>
 <table class="table">
   <thead>
