@@ -4,7 +4,7 @@
         <a href="{{ route('ekidenMaster') }}">駅伝マスタ</a>
       </div>
       <div class="col-sm">
-        大学マスタ
+        <a href="{{ route('universityMaster') }}">大学マスタ</a>
       </div>
     </div>
 </div>

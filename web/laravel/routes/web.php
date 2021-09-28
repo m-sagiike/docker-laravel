@@ -32,3 +32,11 @@ Route::get('/ekiden_record', function () {
 Route::get('/kukan_record', function () {
     return view('kukan_record');
 })->name('kukanRecord');
+
+Route::get('/university_master', function () {
+    return view('university_master');
+})->name('universityMaster');
+
+Route::get('/player_master', function () {
+    return view('player_master');
+})->name('playerMaster');
