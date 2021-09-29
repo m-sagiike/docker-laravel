@@ -4,6 +4,8 @@
  
 @section('content')
 <p>選手マスタ</p>
+{{-- CSVアップロードで登録変更できるように今後やる
+OBや退部した部員の扱いをどうするか? --}}
 <div class="row mb-3 mr-0 ml-0">
   <div class="col-10">
     <button type="button" class="btn btn-primary">選手新規登録</button>
