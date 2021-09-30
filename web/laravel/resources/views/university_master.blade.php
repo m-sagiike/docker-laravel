@@ -20,22 +20,22 @@
   <tbody>
     <tr>
       <th scope="row">駒澤大学</th>
-      <td><a class="btn btn-primary" href="{{ route('playerMaster') }}" role="button">選手一覧</a></td>
+      <td><a class="btn btn-primary" href="{{ route('memberMaster') }}" role="button">選手一覧</a></td>
       <td><a class="btn btn-success" href="" role="button">編集</a></td>
     </tr>
     <tr>
       <th scope="row">東洋大学</th>
-      <td><a class="btn btn-primary" href="{{ route('playerMaster') }}" role="button">選手一覧</a></td>
+      <td><a class="btn btn-primary" href="{{ route('memberMaster') }}" role="button">選手一覧</a></td>
       <td><a class="btn btn-success" href="" role="button">編集</a></td>
     </tr>
     <tr>
       <th scope="row">帝京大学</th>
-      <td><a class="btn btn-primary" href="{{ route('playerMaster') }}" role="button">選手一覧</a></td>
+      <td><a class="btn btn-primary" href="{{ route('memberMaster') }}" role="button">選手一覧</a></td>
       <td><a class="btn btn-success" href="" role="button">編集</a></td>
     </tr>
     <tr>
       <th scope="row">國學院大学</th>
-      <td><a class="btn btn-primary" href="{{ route('playerMaster') }}" role="button">選手一覧</a></td>
+      <td><a class="btn btn-primary" href="{{ route('memberMaster') }}" role="button">選手一覧</a></td>
       <td><a class="btn btn-success" href="" role="button">編集</a></td>
     </tr>
   </tbody>

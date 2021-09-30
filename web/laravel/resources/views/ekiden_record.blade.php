@@ -1,7 +1,7 @@
 @extends('app')
- 
+
 @section('title', '大会記録マスタ')
- 
+
 @section('content')
 <p>大会記録マスタ</p>
 <div class="row mb-3 mr-0 ml-0">
@@ -18,7 +18,7 @@
   </div>
   <div class="col-4">
     {{-- 区間記録マスタに遷移する --}}
-    <a class="btn btn-success" href="{{ route('kukanRecord') }}" role="button">区間記録</a>
+    <a class="btn btn-success" href="{{ route('kukanRecord',['id'=>1]) }}" role="button">区間記録</a>
   </div>
 </div>
 <table class="table">
