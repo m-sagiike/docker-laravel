@@ -1,6 +1,6 @@
 @extends('app')
  
-@section('title', '選手マスタ')
+@section('title', '部員マスタ')
  
 @section('content')
 <p>選手マスタ</p>
@@ -8,7 +8,7 @@
 OBや退部した部員の扱いをどうするか? --}}
 <div class="row mb-3 mr-0 ml-0">
   <div class="col-10">
-    <button type="button" class="btn btn-primary">選手新規登録</button>
+    <button type="button" class="btn btn-primary">部員新規登録</button>
   </div>
 </div>
 <table class="table">
