@@ -27,9 +27,9 @@ Route::get('/', function () {
 
 Route::get('/ekiden_master', [EkidenController::class, 'index'])->name('ekidenMaster');
 
-Route::get('/ekiden_record', [EkidenRecordController::class, 'index'])->name('ekidenRecord');
+Route::get('/ekiden_record/{id}', [EkidenRecordController::class, 'show'])->name('ekidenRecord');
 
-Route::get('/kukan_record/{id}', [EkidenRecordController::class, 'show'])->name('kukanRecord');
+Route::get('/kukan_record/{id}', [EkidenRecordController::class, 'showKukanRecord'])->name('kukanRecord');
 
 Route::get('/university_master', [UniversityController::class, 'index'])->name('universityMaster');
 
