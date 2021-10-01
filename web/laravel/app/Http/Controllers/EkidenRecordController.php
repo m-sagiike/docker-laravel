@@ -13,8 +13,7 @@ class EkidenRecordController extends Controller
      */
     public function index()
     {
-        // 初期表示
-        return view('ekiden_record');
+        //
     }
 
     /**
@@ -45,6 +44,18 @@ class EkidenRecordController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
+    {
+        // 駅伝大会記録表示
+        return view('ekiden_record');
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function showKukanRecord($id)
     {
         // 区間記録表示
         return view('kukan_record');
