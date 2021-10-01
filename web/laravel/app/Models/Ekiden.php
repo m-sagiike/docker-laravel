@@ -10,4 +10,11 @@ class Ekiden extends Model
 {
     use HasFactory;
     use SoftDeletes;
+
+    /**
+     * 複数代入可能な属性
+     *
+     * @var array
+     */
+    protected $fillable = ['ekiden_name'];
 }

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Ekiden;
+use Illuminate\Support\Facades\Log;
 
 class EkidenController extends Controller
 {
@@ -13,8 +15,10 @@ class EkidenController extends Controller
      */
     public function index()
     {
-        // 初期表示
-        return view('ekiden_master');
+        // 初期表示用データ取得
+        $ekidens = Ekiden::get();
+
+        return view('ekiden_master', ['ekidens' => $ekidens]);
     }
 
     /**
