@@ -5,6 +5,7 @@ use App\Http\Controllers\EkidenController;
 use App\Http\Controllers\EkidenRecordController;
 use App\Http\Controllers\UniversityController;
 use App\Http\Controllers\MemberController;
+use App\Http\Controllers\KukanRecordController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,7 +30,7 @@ Route::get('/ekiden_master', [EkidenController::class, 'index'])->name('ekidenMa
 
 Route::get('/ekiden_record/{id}', [EkidenRecordController::class, 'show'])->name('ekidenRecord');
 
-Route::get('/kukan_record/{id}', [EkidenRecordController::class, 'showKukanRecord'])->name('kukanRecord');
+Route::get('/kukan_record/{id}', [KukanRecordController::class, 'show'])->name('kukanRecord');
 
 Route::get('/university_master', [UniversityController::class, 'index'])->name('universityMaster');
 
