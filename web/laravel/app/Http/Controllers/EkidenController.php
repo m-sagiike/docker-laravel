@@ -28,7 +28,8 @@ class EkidenController extends Controller
      */
     public function create()
     {
-        //
+        // 駅伝 新規登録
+        return view('ekiden_create');
     }
 
     /**

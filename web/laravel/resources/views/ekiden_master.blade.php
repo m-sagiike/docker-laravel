@@ -6,7 +6,7 @@
 <p>駅伝マスタ</p>
 <div class="row mb-3 mr-0 ml-0">
   <div class="col-10">
-    <button type="button" class="btn btn-primary">駅伝新規登録</button>
+    <a class="btn btn-primary" href="{{ route('ekidenCreate') }}" role="button">駅伝新規登録</a>
   </div>
 </div>
 <table class="table">
