@@ -24,7 +24,7 @@
             @include('header')
         </header>
  
-        <main>
+        <main class='mx-3'>
             @yield('content')
         </main>
  
