@@ -26,7 +26,11 @@ Route::get('/', function () {
     return view('top');
 })->name('top');
 
+// 駅伝マスタ
 Route::get('/ekiden_master', [EkidenController::class, 'index'])->name('ekidenMaster');
+
+// 駅伝新規登録
+Route::get('/ekiden_create', [EkidenController::class, 'create'])->name('ekidenCreate');
 
 Route::get('/ekiden_record/{id}', [EkidenRecordController::class, 'show'])->name('ekidenRecord');
 
