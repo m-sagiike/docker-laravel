@@ -31,6 +31,8 @@ Route::get('/ekiden_master', [EkidenController::class, 'index'])->name('ekidenMa
 
 // 駅伝新規登録
 Route::get('/ekiden_create', [EkidenController::class, 'create'])->name('ekidenCreate');
+// 駅伝新規登録確認
+Route::post('/ekiden_create_confirm', [EkidenController::class, 'createConfirm'])->name('ekidenCreateConfirm');
 
 Route::get('/ekiden_record/{id}', [EkidenRecordController::class, 'show'])->name('ekidenRecord');
 
