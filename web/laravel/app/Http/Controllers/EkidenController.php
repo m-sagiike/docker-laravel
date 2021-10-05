@@ -33,6 +33,23 @@ class EkidenController extends Controller
     }
 
     /**
+     * 駅伝新規登録確認
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function createConfirm(Request $request)
+    {
+        // エラーメッセージのカスタマイズをする
+        $validated = $request->validate([
+            'ekiden_name' => 'required|max:100',
+        ]);
+        
+        // 駅伝 新規登録
+        return view('ekiden_create_confirm');
+    }
+
+    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
