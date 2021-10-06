@@ -40,12 +40,13 @@ class EkidenController extends Controller
      */
     public function createConfirm(Request $request)
     {
+        // validation
         $validated = $request->validate([
             'ekiden_name' => 'required|max:100',
         ]);
         
         // 駅伝 新規登録
-        return view('ekiden_create_confirm');
+        return view('ekiden_create_confirm', ['ekiden_name' => $request->ekiden_name]);
     }
 
     /**
@@ -56,7 +57,11 @@ class EkidenController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // validation
+
+        // 登録
+        $ekiden = new Ekiden();
+        $ekiden->insertEkiden($request);
     }
 
     /**
