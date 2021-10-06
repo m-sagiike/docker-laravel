@@ -40,7 +40,6 @@ class EkidenController extends Controller
      */
     public function createConfirm(Request $request)
     {
-        // エラーメッセージのカスタマイズをする
         $validated = $request->validate([
             'ekiden_name' => 'required|max:100',
         ]);
