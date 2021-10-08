@@ -2,10 +2,12 @@
 
 namespace App\Models;
 
+use Exception;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\DB;
 
 class Ekiden extends Model
 {
@@ -19,8 +21,19 @@ class Ekiden extends Model
      */
     protected $fillable = ['ekiden_name'];
 
-    public function insertEkiden($data) {
+    /**
+     * 駅伝データの登録更新
+     *
+     * @var array
+     */
+    public function saveEkiden($ekiden)
+    {
         Log::debug('データ確認');
-        Log::debug($data);
+        Log::debug($ekiden);
+
+        Log::debug('クエリ表示');
+        DB::enableQueryLog();
+        Ekiden::save($ekiden);
+        Log::debug(dd(DB::getQueryLog()));
     }
 }

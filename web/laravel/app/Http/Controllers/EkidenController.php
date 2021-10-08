@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Ekiden;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class EkidenController extends Controller
 {
@@ -44,7 +46,8 @@ class EkidenController extends Controller
         $validated = $request->validate([
             'ekiden_name' => 'required|max:100',
         ]);
-        
+        // 20211008 同じ駅伝名がすでに存在するかチェックしたほうがいいかも
+
         // 駅伝 新規登録
         return view('ekiden_create_confirm', ['ekiden_name' => $request->ekiden_name]);
     }
@@ -57,11 +60,34 @@ class EkidenController extends Controller
      */
     public function store(Request $request)
     {
-        // validation
+        // validation追加する
 
-        // 登録
-        $ekiden = new Ekiden();
-        $ekiden->insertEkiden($request);
+        // EkidenModel
+        $ekidenObj = new Ekiden();
+        // Modelに渡すデータ
+        $insertEkiden = [
+            'ekiden_name' => $request->ekiden_name,
+        ];
+
+        // 新規登録
+        try {
+            // 同じ駅伝名が存在した場合、登録処理は実行しない
+            $selectEkiden = $ekidenObj->where('ekiden_name', $insertEkiden['ekiden_name'])->get();
+            Log::debug($selectEkiden);
+            if (!empty($selectEkiden)) {
+                return redirect()->route('ekidenCreate');
+            }
+            DB::transaction(function () use ($ekidenObj, $insertEkiden) {
+                // ekiden登録
+                $ekidenObj->saveEkiden($insertEkiden);
+            });
+        } catch (ModelNotFoundException $e) {
+            Log::debug($e);
+            throw $e;
+        } catch (\Throwable $e) {
+            Log::debug($e);
+            throw $e;
+        }
     }
 
     /**
