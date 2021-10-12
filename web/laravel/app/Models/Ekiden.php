@@ -28,12 +28,8 @@ class Ekiden extends Model
      */
     public function saveEkiden($ekiden)
     {
-        Log::debug('データ確認');
-        Log::debug($ekiden);
-
-        Log::debug('クエリ表示');
-        DB::enableQueryLog();
-        Ekiden::save($ekiden);
-        Log::debug(dd(DB::getQueryLog()));
+        // DB::enableQueryLog();
+        $this->fill($ekiden)->save();
+        // Log::debug(dd(DB::getQueryLog()));
     }
 }

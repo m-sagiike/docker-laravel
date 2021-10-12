@@ -62,8 +62,6 @@ class EkidenController extends Controller
     {
         // validation追加する
 
-        // EkidenModel
-        $ekidenObj = new Ekiden();
         // Modelに渡すデータ
         $insertEkiden = [
             'ekiden_name' => $request->ekiden_name,
@@ -72,12 +70,14 @@ class EkidenController extends Controller
         // 新規登録
         try {
             // 同じ駅伝名が存在した場合、登録処理は実行しない
-            $selectEkiden = $ekidenObj->where('ekiden_name', $insertEkiden['ekiden_name'])->get();
-            Log::debug($selectEkiden);
-            if (!empty($selectEkiden)) {
+            $selectEkiden = Ekiden::where('ekiden_name', $insertEkiden['ekiden_name'])->first();
+            if ($selectEkiden) {
+                // エラーメッセージも返す
                 return redirect()->route('ekidenCreate');
             }
-            DB::transaction(function () use ($ekidenObj, $insertEkiden) {
+            DB::transaction(function () use ($insertEkiden) {
+                // EkidenModel
+                $ekidenObj = new Ekiden();
                 // ekiden登録
                 $ekidenObj->saveEkiden($insertEkiden);
             });
