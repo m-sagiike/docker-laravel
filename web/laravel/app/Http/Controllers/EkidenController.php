@@ -60,6 +60,11 @@ class EkidenController extends Controller
      */
     public function store(Request $request)
     {
+        // 戻るボタンのとき、入力画面に戻る
+        if ($request->action === 'back') {
+            return redirect()->route('ekidenCreate')->withInput($request->except('action'));
+        }
+
         // validation追加する
 
         // Modelに渡すデータ
