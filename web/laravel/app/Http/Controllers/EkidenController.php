@@ -103,7 +103,10 @@ class EkidenController extends Controller
      */
     public function show($id)
     {
-        //
+        // idからselectする
+
+        // いったんblade表示する
+        return view('ekiden_update');
     }
 
     /**

@@ -22,8 +22,12 @@
     @foreach ($ekidens as $ekiden)
     <tr>
       <th scope="row">{{$ekiden->ekiden_name}}</th>
-      <td><a class="btn btn-primary" href="{{ route('ekidenRecord',['id'=>$ekiden->id]) }}" role="button">大会記録</a></td>
-      <td><button type="button" class="btn btn-success">編集</button></td>
+      <td>
+        <a class="btn btn-primary" href="{{ route('ekidenRecord',['id'=>$ekiden->id]) }}" role="button">大会記録</a>
+      </td>
+      <td>
+        <a class="btn btn-success" href="{{ route('ekidenShow',['id'=>$ekiden->id]) }}" role="button">編集</a>
+      </td>
     </tr>
     @endforeach
   </tbody>
