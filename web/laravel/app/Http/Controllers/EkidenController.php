@@ -103,10 +103,22 @@ class EkidenController extends Controller
      */
     public function show($id)
     {
-        // idからselectする
+        // validation追加する
 
-        // いったんblade表示する
-        return view('ekiden_update');
+        try {
+            $ekidenData = DB::transaction(function () use ($id) {
+                // idから駅伝情報を取得する
+                return Ekiden::findOrFail($id);
+            });
+            return view('ekiden_update', ['ekiden' => $ekidenData]);
+
+        } catch (ModelNotFoundException $e) {
+            Log::debug($e);
+            throw $e;
+        } catch (\Throwable $e) {
+            Log::debug($e);
+            throw $e;
+        }
     }
 
     /**

@@ -10,7 +10,8 @@
 
   <div class="col-md-6">
     <label for="ekidenName">駅伝名</label>
-    <input type="text" class="col-sm-10" name="ekiden_name" id="ekiden_name" value="{{ old('ekiden_name') }}">
+    <input type="text" class="col-sm-10" name="ekiden_name" id="ekiden_name" value="{{ old('ekiden_name') ?? $ekiden->ekiden_name ?? '' }}">
+    <input type="hidden" name="ekiden_id" id="ekiden_id" value="{{ $ekiden->id }}">
     @error('ekiden_name')
     <div class="alert alert-danger">{{ $message }}</div>
     @enderror
