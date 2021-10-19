@@ -111,7 +111,6 @@ class EkidenController extends Controller
                 return Ekiden::findOrFail($id);
             });
             return view('ekiden_update', ['ekiden' => $ekidenData]);
-
         } catch (ModelNotFoundException $e) {
             Log::debug($e);
             throw $e;
@@ -127,9 +126,16 @@ class EkidenController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request)
     {
-        //
+        // validation
+        $validated = $request->validate([
+            'ekiden_name' => 'required|max:100',
+        ]);
+        // 20211019 同じ駅伝名がすでに存在するかチェックしたほうがいいかも
+
+        // 駅伝更新確認
+        return view('ekiden_update_confirm', ['ekiden' => $request]);
     }
 
     /**

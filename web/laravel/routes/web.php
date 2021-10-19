@@ -37,6 +37,8 @@ Route::post('/ekiden_create_confirm', [EkidenController::class, 'createConfirm']
 Route::put('/ekiden_create_store', [EkidenController::class, 'store'])->name('ekidenCreateStore');
 // 駅伝更新表示
 Route::get('/ekiden_show/{id}', [EkidenController::class, 'show'])->name('ekidenShow');
+// 駅伝更新確認
+Route::post('/ekiden_update_confirm', [EkidenController::class, 'edit'])->name('ekidenEdit');
 
 Route::get('/ekiden_record/{id}', [EkidenRecordController::class, 'show'])->name('ekidenRecord');
 
