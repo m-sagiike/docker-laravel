@@ -15,5 +15,4 @@ class University extends Model
      * @var string
      */
     protected $table = 'universities';
-
 }
